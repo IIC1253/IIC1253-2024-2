@@ -1,0 +1,124 @@
+% Plantilla para documentos LaTeX para enunciados
+% Por Pedro Pablo Aste Kompen - ppaste@uc.cl
+% Licencia Creative Commons BY-NC-SA 3.0
+% http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+\documentclass[12pt]{article}
+
+% Margen de 1 pulgada por lado
+\usepackage{fullpage}
+% Incluye gráficas
+\usepackage{graphicx}
+% Packages para matemáticas, por la American Mathematical Society
+\usepackage{amssymb}
+\usepackage{amsmath}
+% Desactivar hyphenation
+\usepackage[none]{hyphenat}
+% Saltar entre párrafos - sin sangrías
+\usepackage{parskip}
+% Español y UTF-8
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+% Links en el documento
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\setlength{\headsep}{5pt}
+\pagestyle{fancy}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Exp}[1]{\mathcal{E}_{#1}}
+\newcommand{\List}[1]{\mathcal{L}_{#1}}
+\newcommand{\EN}{\Exp{\N}}
+\newcommand{\LN}{\List{\N}}
+
+\newcommand{\comment}[1]{}
+\newcommand{\lb}{\\~\\}
+\newcommand{\eop}{_{\square}}
+\newcommand{\hsig}{\hat{\sigma}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\lra}{\leftrightarrow}
+
+% Cambiar por nombre completo + número de alumno
+\newcommand{\alumno}{Nombre Apellido - 10000001}
+\rhead{Tarea Ejemplo - \alumno}
+
+\begin{document}
+\thispagestyle{empty}
+% Membrete
+% PUC-ING-DCC-IIC1103
+\begin{minipage}{2.3cm}
+\includegraphics[width=2cm]{img/logo.pdf}
+\vspace{0.5cm} % Altura de la corona del logo, así el texto queda alineado verticalmente con el círculo del logo.
+\end{minipage}
+\begin{minipage}{\linewidth}
+\textsc{\raggedright \footnotesize
+Pontificia Universidad Católica de Chile \\
+Departamento de Ciencia de la Computación \\
+IIC1253 - Matemáticas Discretas \\}
+\end{minipage}
+
+
+% Titulo
+\begin{center}
+\vspace{0.5cm}
+{\huge\bf Tarea Ejemplo}\\
+\vspace{0.2cm}
+\today\\
+\vspace{0.2cm}
+\footnotesize{2º semestre 2024 - Profesores P. Bahamondes - D. Bustamante - M. Romero}\\
+\vspace{0.2cm}
+\footnotesize{\alumno}
+\rule{\textwidth}{0.05mm}
+\end{center}
+
+
+
+\section*{Respuestas}
+% Estas numeracion es solo de ejemplo
+
+\subsection*{Pregunta 1}
+\subsubsection*{Pregunta 1.1}
+% Respuesta pregunta
+Se demostrará por inducción simple.
+
+\textbf{BI:} Para $n = 0$ se tiene que:
+\begin{itemize}
+    \item LI: $\sum\limits_{i=0}^n i^2 = \sum\limits_{i=0}^0 i^2 = 0$
+    \begin{equation*}
+        \sum_{i=0}^n i^2 = \sum_{i=0}^0 i^2 = 0
+    \end{equation*}
+    \item LD: $\frac{n(n + 1)(2n + 1)}{6} = \frac{0(1)(1)}{6} = 0$
+    
+    LI = LD por lo que el caso base se cumple.
+\end{itemize}
+
+\textbf{HI:} Supongamos que la propiedad se cumple para $n$, es decir, que
+\begin{equation*}
+    \sum_{i=0}^n i^2 = \frac{n(n + 1)(2n + 1)}{6}
+\end{equation*}
+
+\textbf{TI:} PD: La propiedad se cumple para $n + 1$, es decir, que 
+\begin{equation*}
+    \sum_{i=0}^{n + 1} i^2 = \frac{(n + 1)((n + 1) + 1)(2(n + 1)+ 1)}{6}
+\end{equation*}
+
+Por HI, se tiene que
+\begin{align*}
+    \sum_{i=0}^n i^2 &= \frac{n(n + 1)(2n + 1)}{6} \\
+    \sum_{i=0}^n i^2 + (n + 1)^2 &= \frac{n(n + 1)(2n + 1)}{6} + (n + 1)^2 \\
+    \sum_{i=0}^{n + 1} i^2 &= \frac{n(2n^2 + n + 2n + 1) + 6(n + 1)^2}{6} \\
+    \sum_{i=0}^{n + 1} i^2 &= \frac{2n^3 + 3n^2 + n + 6n^2 + 12n + 6}{6} \\
+    \sum_{i=0}^{n + 1} i^2 &= \frac{2n^3 + 9n^2 + 13n + 6}{6} \\
+    \sum_{i=0}^{n + 1} i^2 &= \frac{(n + 1)(2n^2 + 7n + 6)}{6} \\
+    \sum_{i=0}^{n + 1} i^2 &= \frac{(n + 1)(2n + 3)(n + 2)}{6} \\
+    \sum_{i=0}^{n + 1} i^2 &= \frac{(n + 1)((n + 1) + 1)(2(n + 1) + 1)}{6} \\
+\end{align*}
+que es lo que queríamos demostrar.
+
+Concluímos que $\sum\limits_{i = 0}^n i^2 = \frac{n(n + 1)(2n + 1)}{6}$.$_\square$
+
+
+% Fin del documento
+\end{document}
+
