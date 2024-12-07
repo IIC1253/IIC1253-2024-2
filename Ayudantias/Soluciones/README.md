@@ -4,6 +4,7 @@
 
 2024-2
 - [Cápsula Solución Ayudantía 11 (Algoritmos)](https://www.youtube.com/watch?v=YF_fGgseSfI)
+- [Cápsula Solución Ayudantía de repaso examen](https://www.youtube.com/watch?v=Tu6lMfXzwdg)
 
 2024-1
 - [Cápsula Solución Ayudantía 8 (Funciones y Cardinalidad)](https://www.youtube.com/watch?v=dPkEJQrTBA0)
